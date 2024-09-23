@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>Monitor del Clima</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(to right, #87CEEB, #F0F8FF);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        .container {
+            max-width: 480px;
+            margin: auto;
+            padding-top: 30px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        .data-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        .data-container {
+            margin-top: 20px;
+        }
+        .row {
+            align-items: center;
+            margin-top: 15px;
+        }
+        .weather-symbol {
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+    </style>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Monitor del Clima</h1>
+            <p class="text-muted">Lecturas en tiempo real del sensor climático</p>
+            
+            <div class="data-container">
+                <div class="row">
+                    <div class="col-2">
+                        <span class="weather-symbol">🌡️</span>
+                    </div>
+                    <div class="col-6">
+                        <h3>Temperatura</h3>
+                    </div>
+                    <div class="col-4">
+                        <p class="data-value"><span id="tempSensor">--</span> °C</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2">
+                        <span class="weather-symbol">🌫️</span>
+                    </div>
+                    <div class="col-6">
+                        <h3>Presión</h3>
+                    </div>
+                    <div class="col-4">
+                        <p class="data-value"><span id="presSensor">--</span> hPa</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2">
+                        <span class="weather-symbol">⛰️</span>
+                    </div>
+                    <div class="col-6">
+                        <h3>Altitud</h3>
+                    </div>
+                    <div class="col-4">
+                        <p class="data-value"><span id="altSensor">--</span> msnm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            Created by Jaime Bazán Godoy &middot; &copy; 2024
+        </footer>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/IoTAPP.js"></script>
+</body>
+</html>
